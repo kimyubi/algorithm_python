@@ -6,11 +6,11 @@ def solution(answers):
     score = [0,0,0]
     
     for (i, a) in enumerate(answers):
-        if a == f[i%5]:
+        if a == f[i%len(f)]:
             score[0] += 1
-        if a == s[i%8]:
+        if a == s[i%len(s)]:
             score[1] += 1
-        if a == t[i%10]:
+        if a == t[i%len(t)]:
             score[2] += 1
     
     max_score = max(score)
