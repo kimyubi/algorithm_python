@@ -2,17 +2,15 @@ n = int(input())
 cnt = 0
 
 def is_group(word):
-    stack = []
+    seen = set()
+    prev = None
+    
     for c in word:
-        if c not in stack:
-            stack.append(c)
-            continue
-        else:
-            if stack[-1] == c:
-                stack.append(c)
-                continue
-            else:
+        if c != prev:
+            if c in seen:
                 return False
+            seen.add(c)
+            prev = c
     return True
 
 
@@ -22,3 +20,4 @@ for _ in range(n):
         cnt +=1 
         
 print(cnt)
+
