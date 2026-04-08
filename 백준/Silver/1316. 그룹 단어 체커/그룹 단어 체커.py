@@ -1,5 +1,4 @@
 n = int(input())
-cnt = 0
 
 def is_group(word):
     seen = set()
@@ -13,10 +12,9 @@ def is_group(word):
             prev = c
     return True
 
-
+cnt = 0
 for _ in range(n):
-    word = str(input())
-    if is_group(word):
+    if is_group(str(input())):
         cnt +=1 
         
 print(cnt)
